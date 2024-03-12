@@ -60,6 +60,10 @@ const ExchangeRates: React.FC = () => {
 
 
   const calculateAmount = () => {
+    if (isNaN(quantity)) {
+      return 0;
+    }
+
     if (selectedCryptoTo === 'USDT' && selectedCryptoFrom === 'USDT') {
       return quantity;
     }
